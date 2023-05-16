@@ -1,12 +1,12 @@
-# 🏗 Scaffold-ETH 2
+# ⏫ UUPS Proxy with SE-2
 
-🧪 An open-source, up-to-date toolkit for building decentralized applications (dapps) on the Ethereum blockchain. It's designed to make it easier for developers to create and deploy smart contracts and build user interfaces that interact with those contracts.
+## Resources in Order :
 
-⚙️ Built using NextJS, RainbowKit, Hardhat, Wagmi, and Typescript.
-
-- ✅ **Contract Hot Reload**: Your frontend auto-adapts to your smart contract as you edit it.
-- 🔥 **Burner Wallet & Local Faucet**: Quickly test your application with a burner wallet and local faucet.
-- 🔐 **Integration with Wallet Providers**: Connect to different wallet providers and interact with the Ethereum network.
+- [Proxy Upgrade Pattern](https://docs.openzeppelin.com/upgrades-plugins/1.x/proxies)
+  - [Indepth Proxy patterns](https://blog.openzeppelin.com/proxy-patterns/)
+- [Transparent Proxy Pattern](https://blog.openzeppelin.com/the-transparent-proxy-pattern/)
+- [Transparent Proxy VS UUPS](https://docs.openzeppelin.com/contracts/4.x/api/proxy#transparent-vs-uups)
+- [Deploying More Efficient Upgradeable Contracts Video](https://youtu.be/kWUDTZhxKZI) - will help you revise everything learned
 
 ## Contents
 
@@ -21,7 +21,11 @@
   - [Disabling Github Workflow](#disabling-github-workflow)
 - [Contributing to Scaffold-ETH 2](#contributing-to-scaffold-eth-2)
 
-## Requirements
+## Understanding tools use
+
+### [harhdat-deploy](https://github.com/wighawag/hardhat-deploy)
+
+In Scaffold-ETH 2 we use hardhat-deploy to deploy contracts. This allows us to deploy contracts to multiple networks and keep track of the deployed contracts. The deployed contracts are stored in `packages/hardhat/deployments` and `packages/nextjs/generated/deployedContracts`. You can customize the deployment scripts in `packages/hardhat/deploy`.
 
 Before you begin, you need to install the following tools:
 

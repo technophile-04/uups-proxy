@@ -3,6 +3,7 @@ dotenv.config();
 import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
 import "hardhat-deploy";
+import "@nomiclabs/hardhat-etherscan";
 import "@openzeppelin/hardhat-upgrades";
 
 // If not set, it uses ours Alchemy's default API key.
@@ -69,10 +70,8 @@ const config: HardhatUserConfig = {
       accounts: [deployerPrivateKey],
     },
   },
-  verify: {
-    etherscan: {
-      apiKey: `${etherscanApiKey}`,
-    },
+  etherscan: {
+    apiKey: `${etherscanApiKey}`,
   },
 };
 
