@@ -1,6 +1,5 @@
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
-import { YourContract } from "../typechain-types";
 import { verify } from "../utils/verify";
 
 /**
@@ -28,9 +27,9 @@ const deployYourContractContract: DeployFunction = async function (hre: HardhatR
   const YourContract = await hre.ethers.getContractFactory("YourContract");
 
   // "0xF37dB18dA71970FeE6242EdFF9cb5C841D68F117" is my burner(frontend) address, add yours (This will be passed to initialze function)
-  const proxy = (await hre.upgrades.deployProxy(YourContract, ["0xF37dB18dA71970FeE6242EdFF9cb5C841D68F117"], {
+  const proxy = await hre.upgrades.deployProxy(YourContract, ["0xF37dB18dA71970FeE6242EdFF9cb5C841D68F117"], {
     kind: "uups",
-  })) as YourContract;
+  });
 
   // Wait for 3 blocks to confirm the transaction if we are on a live network
   if (chainId !== "31337") {
