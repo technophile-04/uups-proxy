@@ -26,8 +26,7 @@ const deployYourContractContract: DeployFunction = async function (hre: HardhatR
   // Get contract factory for YourContract
   const YourContract = await hre.ethers.getContractFactory("YourContract");
 
-  // "0xF37dB18dA71970FeE6242EdFF9cb5C841D68F117" is my burner(frontend) address, add yours (This will be passed to initialze function)
-  const proxy = await hre.upgrades.deployProxy(YourContract, ["0xF37dB18dA71970FeE6242EdFF9cb5C841D68F117"], {
+  const proxy = await hre.upgrades.deployProxy(YourContract, {
     kind: "uups",
   });
 

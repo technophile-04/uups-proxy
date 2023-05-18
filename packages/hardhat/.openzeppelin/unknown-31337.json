@@ -2,11 +2,6 @@
   "manifestVersion": "3.2",
   "proxies": [
     {
-      "address": "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
-      "txHash": "0x1a67eff7956819f511ad59fdf6a6b64d1f97e34002815b11976180fb0ded27ad",
-      "kind": "uups"
-    },
-    {
       "address": "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
       "txHash": "0x7dea9bfcd1856ce80f05bcd1a4f5bc95a2c66d4cf2fc1b931336f4782322f35a",
       "kind": "uups"
@@ -15,12 +10,121 @@
       "address": "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9",
       "txHash": "0xed707ff9874ad7ca07bf94c7418399ec6dbb670618735bceff0df234bc27f269",
       "kind": "uups"
+    },
+    {
+      "address": "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+      "txHash": "0xf9ed7bd8e7aea8834d0120e98d14c72e52f0ac9ad6f19a50fbf4f0ed3d051ad5",
+      "kind": "uups"
     }
   ],
   "impls": {
-    "0c699ca0c1d02bb00a5f4422cfb826eeb99ef6e7e4072585f6ef87d61fb99337": {
+    "6b5c85978e528ff5790ca28901a58941fbfbc90224f60f87328966664a156c17": {
+      "address": "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
+      "txHash": "0xe21dd74f6fa3118d2d5b0773e0972ab0da2ee3a153bbda31bfb58d5b3379b802",
+      "layout": {
+        "solcVersion": "0.8.17",
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:67"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ERC1967UpgradeUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/ERC1967/ERC1967UpgradeUpgradeable.sol:197"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "UUPSUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol:107"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol:36"
+          },
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "151",
+            "type": "t_address",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:22"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "152",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:94"
+          },
+          {
+            "label": "greeting",
+            "offset": 0,
+            "slot": "201",
+            "type": "t_string_storage",
+            "contract": "YourContractV2",
+            "src": "contracts/YourContractV2.sol:10"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]",
+            "numberOfBytes": "1568"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_string_storage": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "ee9c525e5251a83511040da2f476c265a8aacf12a12cedb471b8399f214a7d54": {
       "address": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
-      "txHash": "0x459fc2811d132c4b8013680b86f6fe3fe9349b5b45918439d4d026161c8e452c",
+      "txHash": "0x3e97aaeb470c8ac61dbf3a86e0acfe51a52d55ef5282c66306f9f49855363d67",
       "layout": {
         "solcVersion": "0.8.17",
         "storage": [
@@ -87,7 +191,7 @@
             "slot": "201",
             "type": "t_string_storage",
             "contract": "YourContract",
-            "src": "contracts/YourContract.sol:12"
+            "src": "contracts/YourContract.sol:10"
           }
         ],
         "types": {

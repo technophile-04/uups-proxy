@@ -5,21 +5,15 @@ import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 import "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 
-contract YourContract is Initializable, UUPSUpgradeable, OwnableUpgradeable {
+contract YourContractV2 is Initializable, UUPSUpgradeable, OwnableUpgradeable {
   // State Variables
   string public greeting;
   
-  function initialize() public initializer {
-    __Ownable_init();
-    __UUPSUpgradeable_init();
-
-    greeting = "Bulding Unstopaple Apps!!!";
-  }
-
   function _authorizeUpgrade(address) internal override onlyOwner {}
 
-  // Anyone can set the greeting for free
-  function setGreeting(string memory _greeting) public {
+  // You have to pay some ETH to set the greeting 
+  function setGreeting(string memory _greeting) public payable {
+    require(msg.value > 0, "You have to pay some ETH to set the greeting");
     greeting = _greeting;
   }
 }
