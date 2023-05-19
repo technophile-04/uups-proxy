@@ -1,12 +1,18 @@
 # ⏫ UUPS Proxy with SE-2
 
 ## Resources in Order :
-
+**Learn**
 - [Proxy Upgrade Pattern](https://docs.openzeppelin.com/upgrades-plugins/1.x/proxies)
   - [Indepth Proxy patterns](https://blog.openzeppelin.com/proxy-patterns/)
 - [Transparent Proxy Pattern](https://blog.openzeppelin.com/the-transparent-proxy-pattern/)
 - [Transparent Proxy VS UUPS](https://docs.openzeppelin.com/contracts/4.x/api/proxy#transparent-vs-uups)
-- [Deploying More Efficient Upgradeable Contracts Video](https://youtu.be/kWUDTZhxKZI) - will help you revise everything learned
+
+**Revise**
+- [Deep Dive: Upgradabhle Smart Contracts](https://aaruni.io/2022/11/deep-dive-upgradeable-smart-contracts/)
+- [Deploying More Efficient Upgradeable Contracts Video](https://youtu.be/kWUDTZhxKZI)
+
+**Security**
+- [OZ Security in Upgrades of smart contract](https://www.youtube.com/watch?v=5WE6PEc305w)
 
 ## Contents
 
