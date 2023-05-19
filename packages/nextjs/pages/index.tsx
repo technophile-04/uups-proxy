@@ -1,9 +1,20 @@
+import { useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import type { NextPage } from "next";
 import { BugAntIcon, SparklesIcon } from "@heroicons/react/24/outline";
+import { useScaffoldContractWrite } from "~~/hooks/scaffold-eth";
 
 const Home: NextPage = () => {
+  const [greetings, setGreetings] = useState("");
+
+  const { writeAsync, isLoading } = useScaffoldContractWrite({
+    contractName: "YourContract_Proxy",
+    functionName: "setGreeting",
+    args: [greetings],
+    value: "0.01",
+  });
+
   return (
     <>
       <Head>
@@ -17,15 +28,19 @@ const Home: NextPage = () => {
             <span className="block text-2xl mb-2">Welcome to</span>
             <span className="block text-4xl font-bold">Scaffold-ETH 2</span>
           </h1>
-          <p className="text-center text-lg">
-            Get started by editing{" "}
-            <code className="italic bg-base-300 text-base font-bold">packages/nextjs/pages/index.tsx</code>
-          </p>
-          <p className="text-center text-lg">
-            Edit your smart contract <code className="italic bg-base-300 text-base font-bold">YourContract.sol</code> in{" "}
-            <code className="italic bg-base-300 text-base font-bold">packages/hardhat/contracts</code>
-          </p>
         </div>
+        <div className={`flex border-2 border-base-300 bg-base-200 rounded-full text-accent `}>
+          <input
+            className="input input-ghost focus:outline-none focus:bg-transparent focus:text-gray-400 h-[2.2rem] min-h-[2.2rem] px-4 border w-full font-medium placeholder:text-accent/50 text-gray-400"
+            placeholder={"Set Greetings"}
+            value={greetings}
+            onChange={e => setGreetings(e.target.value)}
+            autoComplete="off"
+          />
+        </div>
+        <button className="btn-primary btn btn-sm mt-2" onClick={writeAsync} disabled={isLoading}>
+          Set
+        </button>
 
         <div className="flex-grow bg-base-300 w-full mt-16 px-8 py-12">
           <div className="flex justify-center items-center gap-12 flex-col sm:flex-row">

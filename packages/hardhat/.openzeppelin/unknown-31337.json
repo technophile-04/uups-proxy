@@ -19,8 +19,8 @@
   ],
   "impls": {
     "6b5c85978e528ff5790ca28901a58941fbfbc90224f60f87328966664a156c17": {
-      "address": "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
-      "txHash": "0xe21dd74f6fa3118d2d5b0773e0972ab0da2ee3a153bbda31bfb58d5b3379b802",
+      "address": "0x5FC8d32690cc91D4c39d9d3abcBD16989F875707",
+      "txHash": "0x9bd510a226b9b59f55147b63680c4250c6400d359de3191e461ffa817c388925",
       "layout": {
         "solcVersion": "0.8.17",
         "storage": [
@@ -124,7 +124,7 @@
     },
     "ee9c525e5251a83511040da2f476c265a8aacf12a12cedb471b8399f214a7d54": {
       "address": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
-      "txHash": "0x3e97aaeb470c8ac61dbf3a86e0acfe51a52d55ef5282c66306f9f49855363d67",
+      "txHash": "0x0c185621f7bab54e0f1ad581d719d3a6e90364208423a32894e685456661ecbc",
       "layout": {
         "solcVersion": "0.8.17",
         "storage": [
@@ -190,8 +190,8 @@
             "offset": 0,
             "slot": "201",
             "type": "t_string_storage",
-            "contract": "YourContract",
-            "src": "contracts/YourContract.sol:10"
+            "contract": "YourContractV1",
+            "src": "contracts/YourContractV1.sol:10"
           }
         ],
         "types": {

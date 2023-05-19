@@ -8,7 +8,7 @@ import { verify } from "../utils/verify";
  *
  * @param hre HardhatRuntimeEnvironment object.
  */
-const deployYourContractContract: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
+const deployYourContractContract: DeployFunction = async function(hre: HardhatRuntimeEnvironment) {
   /*
     On localhost, the deployer account is the one that comes with Hardhat, which is already funded.
 
@@ -44,6 +44,7 @@ const deployYourContractContract: DeployFunction = async function (hre: HardhatR
 
   const artifacts = await hre.deployments.getExtendedArtifact("YourContractV1");
 
+  // Linking the Implementation artifacts to the Proxy
   const proxyDeployment = {
     address: proxy.address,
     ...artifacts,

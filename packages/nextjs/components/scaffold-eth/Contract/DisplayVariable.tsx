@@ -28,7 +28,10 @@ export const DisplayVariable = ({
     functionName: functionFragment.name,
     args: [],
     onError: error => {
-      notification.error(error.message);
+      // TODO : This a hack and will be fixed later
+      if (!error.message.includes("UUPSUpgradeable: must not be called through delegatecall")) {
+        notification.error(error.message);
+      }
     },
   });
 
