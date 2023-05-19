@@ -23,14 +23,14 @@ const deployYourContractContract: DeployFunction = async function (hre: HardhatR
 
   const chainId = await hre.getChainId();
 
-  // Get contract factory for YourContract
-  const YourContract = await hre.ethers.getContractFactory("YourContract");
+  // Get contract factory for YourContractV1
+  const YourContractV1 = await hre.ethers.getContractFactory("YourContractV1");
 
-  const proxy = await hre.upgrades.deployProxy(YourContract, {
+  const proxy = await hre.upgrades.deployProxy(YourContractV1, {
     kind: "uups",
   });
 
-  // Wait for 3 blocks to confirm the transaction if we are on a live network
+  // Wait for 2 blocks to confirm the transaction if we are on a live network
   if (chainId !== "31337") {
     log("Waiting for 2 blocks to be mined...");
     await proxy.deployTransaction.wait(2);
@@ -39,10 +39,10 @@ const deployYourContractContract: DeployFunction = async function (hre: HardhatR
   // We had to wait for blocks to be mined before we could get the implementation address because sometimes its error out
   const implementationAddress = await hre.upgrades.erc1967.getImplementationAddress(proxy.address);
 
-  log(`YourContract Proxy deployed to: ${proxy.address}`);
-  log(`YourContract Implementation deployed to: ${implementationAddress}`);
+  log(`YourContract_Proxy deployed to: ${proxy.address}`);
+  log(`YourContractV1_Implementation deployed to: ${implementationAddress}`);
 
-  const artifacts = await hre.deployments.getExtendedArtifact("YourContract");
+  const artifacts = await hre.deployments.getExtendedArtifact("YourContractV1");
 
   const proxyDeployment = {
     address: proxy.address,
@@ -54,13 +54,13 @@ const deployYourContractContract: DeployFunction = async function (hre: HardhatR
     ...artifacts,
   };
 
-  await hre.deployments.save("YourContract", proxyDeployment);
-  await hre.deployments.save("YourContract_Implementation", implementationDeployment);
+  await hre.deployments.save("YourContract_Proxy", proxyDeployment);
+  await hre.deployments.save("YourContractV1_Implementation", implementationDeployment);
 
   if (chainId !== "31337") {
-    log("Verifying YourContract_Implementation on Etherscan...");
+    log("Verifying YourContractV1_Implementation on Etherscan...");
     await verify(implementationAddress, []);
-    log("YourContract_Implementation Proxy verified on Etherscan.");
+    log("YourContractV1_Implementation Proxy verified on Etherscan.");
 
     log("Verifying Proxy on Etherscan...");
     await verify(proxy.address, []);
@@ -72,4 +72,4 @@ export default deployYourContractContract;
 
 // Tags are useful if you have multiple deploy files and only want to run one of them.
 // e.g. yarn deploy --tags YourContract
-deployYourContractContract.tags = ["YourContract"];
+deployYourContractContract.tags = ["YourContractV1"];

@@ -5,7 +5,7 @@ import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 import "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 
-contract YourContract is Initializable, UUPSUpgradeable, OwnableUpgradeable {
+contract YourContractV1 is Initializable, UUPSUpgradeable, OwnableUpgradeable {
   // State Variables
   string public greeting;
   
